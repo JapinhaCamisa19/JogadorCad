@@ -3,24 +3,41 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cadastro de Jogador</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Ficha de Partida - PES 2018</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 <div class="container">
-    <h1>Cadastro de Jogador</h1>
+    <h1>Ficha de Partida - PES 2018</h1>
     <form id="form-jogador">
         <label>Nome do Jogador:</label>
-        <input type="text" name="nome" required>
+        <input type="text" name="nome" required />
 
-        <label>Time:</label>
-        <input type="text" name="time" required>
+        <label>Time Atual:</label>
+        <input type="text" name="time" required />
+
+        <label>Adversário:</label>
+        <input type="text" name="adversario" required />
+
+        <label>Data da Partida:</label>
+        <input type="date" name="data" required />
+        
+        <label>Competição:</label>
+        <select name="competicao">
+            <option value="Brasileirão">Brasileirão</option>
+            <option value="Copa do Brasil">Copa do Brasil</option>
+            <option value="Paulistão">Paulistão</option>
+            <option value="Libertadores">Libertadores</option>
+            <option value="Mundial">Mundial</option>
+            <option value="Champions League">Champions League</option>
+            <option value="Outro">Outro</option>
+        </select>
 
         <label>Gols:</label>
-        <input type="number" name="gols" min="0" value="0">
+        <input type="number" name="gols" min="0" value="0" />
 
         <label>Assistências:</label>
-        <input type="number" name="assistencias" min="0" value="0">
+        <input type="number" name="assistencias" min="0" value="0" />
 
         <label>Melhor da Partida:</label>
         <select name="melhor">
@@ -28,14 +45,20 @@
             <option value="Não">Não</option>
         </select>
 
+        <label>Nota do Jogador (0 a 10):</label>
+        <input type="number" name="nota" step="0.1" min="0" max="10" />
+
+        <label>Foi campeão?</label>
+        <select name="campeao">
+            <option value="Não">Não</option>
+            <option value="Sim">Sim</option>
+        </select>
+
         <label>Observações:</label>
-        <textarea name="obs" rows="3"></textarea>
+        <textarea name="obs" rows="3" placeholder="Gol de falta, hat-trick, etc."></textarea>
 
-        <button type="submit">Cadastrar</button>
+        <button type="submit">Cadastrar e Enviar</button>
     </form>
-
-    <h2>Jogadores Cadastrados</h2>
-    <div id="lista-jogadores"></div>
 </div>
 
 <script src="script.js"></script>
